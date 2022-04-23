@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,9 +18,6 @@ class MyApp extends StatelessWidget {
   }
 }
 
-
-
-
 class DicePage extends StatefulWidget {
   @override
   State<DicePage> createState() => _DicePageState();
@@ -26,13 +25,15 @@ class DicePage extends StatefulWidget {
 
 class _DicePageState extends State<DicePage> {
   int leftDice = 2;
+  int rightDice = 1;
+
   @override
   Widget build(BuildContext context) {
     print("MÉTODO BUILD!!!!!!");
     return Scaffold(
-      backgroundColor: Colors.deepPurple,
+      backgroundColor: Colors.green,
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.green,
         title: Text("DiceApp"),
         centerTitle: true,
       ),
@@ -42,11 +43,10 @@ class _DicePageState extends State<DicePage> {
             Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: (){
-                  leftDice = 6;
-                  setState(() {
-
-                  });
+                onPressed: () {
+                  leftDice = Random().nextInt(6) + 1;
+                  rightDice = Random().nextInt(6) + 1;
+                  setState(() {});
                 },
                 child: Image.asset(
                   'assets/images/dice$leftDice.png',
@@ -56,11 +56,13 @@ class _DicePageState extends State<DicePage> {
             Expanded(
               flex: 1,
               child: TextButton(
-                onPressed: (){
-                  print("Right dice");
+                onPressed: () {
+                  leftDice = Random().nextInt(6) + 1;
+                  rightDice = Random().nextInt(6) + 1;
+                  setState(() {});
                 },
                 child: Image.asset(
-                  'assets/images/dice2.png',
+                  'assets/images/dice$rightDice.png',
                 ),
               ),
             ),
@@ -70,20 +72,3 @@ class _DicePageState extends State<DicePage> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
