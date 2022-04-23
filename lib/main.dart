@@ -28,6 +28,7 @@ class _DicePageState extends State<DicePage> {
   int leftDice = 2;
   @override
   Widget build(BuildContext context) {
+    print("MÉTODO BUILD!!!!!!");
     return Scaffold(
       backgroundColor: Colors.deepPurple,
       appBar: AppBar(
