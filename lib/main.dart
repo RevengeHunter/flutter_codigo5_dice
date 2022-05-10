@@ -31,9 +31,9 @@ class _DicePageState extends State<DicePage> {
   Widget build(BuildContext context) {
     print("MÉTODO BUILD!!!!!!");
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: Colors.white12,
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white10,
         title: Text("DiceApp"),
         centerTitle: true,
       ),
